@@ -211,8 +211,11 @@ button:hover{
 }
 
 .hero_image img{
-    width:100%;
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--prime-color);
 }
 
 /* ABOUT SECTION */
@@ -233,10 +236,6 @@ button:hover{
     color: var(--black-color);
 }
 
-.headings p{
-    color: var(--head-text);
-}
-
 .about_container{
     display: flex;
     justify-content: space-between;
@@ -251,10 +250,12 @@ button:hover{
     overflow: hidden;
 }
 
-.about_image image{
-    width:100%;
-    height:100%;
-    border-radius: 10px;
+.about_image img{
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--input-color);
 }
 
 .about_content{
@@ -313,7 +314,6 @@ button:hover{
 
 
 .skills_det{
-    
     width: 55%;
 }
 
@@ -449,14 +449,15 @@ button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
 
 }
 
 .Portfolio_card_img{
-    height: 250px;
-    width:400px;
+    display:contents;
+    height: 150px;
+    width: 10%;
     border: 1px solid rgba(0,0,0,0.3);
     transition: .3s;
     overflow: hidden;
@@ -464,6 +465,7 @@ button:hover{
 
 .Portfolio_card_img img{
     width:100%;
+    height: 100%;
     transition: .3s;
 }
 
@@ -487,25 +489,26 @@ button:hover{
 }
 
 .inputs input{
-    width:100%;
+    width:150%;
     height:50px;
-    background-color: var(--input-color);
+    background-color: black;
     color: var(--black-color);
     font-size: 1.2rem;
     outline: none;
     border:none;
+    padding-left: 5%;
     border-radius: 10px;
 }
 
 .inputs textarea{
-    width:100%;
+    width:150%;
     height:120px;
-    background-color: var(--input-color);
+    background-color: black;
     color: var(--black-color);
     font-size: 1.2rem;
     outline: none;
     border:none;
-    padding-left: 2%;
+    padding-left: 5%;
     border-radius: 10px;
 }
 
