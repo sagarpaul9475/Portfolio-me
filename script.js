@@ -1,21 +1,21 @@
-let mode=document.querySelector('.mode');
-let icon=document.querySelector('.mode i');
-let body=document.querySelector('body');
+let mode = document.querySelector('.mode');
+let icon = document.querySelector('.mode i');
+let nav = document.querySelector('nav');
 
-mode.addEventListener('click',()=>{
-    body.classList.toggle('dark_mode');
+// Ensure the page starts in light mode
+document.body.classList.remove('dark_mode');
 
-    if(icon.getAttribute('class')=='ri-moon-fill'){
-        icon.setAttribute('class','ri-sun-fill');
-    }
-    else{
-        icon.setAttribute('class','ri-moon-fill');
-    }
+mode.addEventListener('click', () => {
+    nav.classList.toggle('dark_mode');
+
 });
 
-let bars=document.querySelectorAll('.bars');
-let menu=document.querySelectorAll('.ul');
+// Toggle mobile menu (only if there's one .bars and one .ul)
+let bar = document.querySelector('.bars');
+let menu = document.querySelector('.ul');
 
-bars.addEventListener('click',()=>{
+bar.addEventListener('click', () => {
     menu.classList.toggle('show_menu');
-})
+});
+
+document.body.classList.add('dark_mode');

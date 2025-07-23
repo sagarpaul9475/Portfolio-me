@@ -28,13 +28,18 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mode">
-                <i class="ri-moon-line"></i>
+                <i></i>
             </div>
         </div>
         <div class="bars">
             <i class="ri-bar-chart-horizontal-line"></i>
         </div>
     </nav>
+
+    <video autoplay muted loop id="bgVideo">
+        <source src="./bacg_vid.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+    </video>
     <!--HERO SECTION-->
     <section class="hero" id="home">
         <div class="hero_social_icon">
@@ -44,17 +49,15 @@
             <i class="ri-behance-fill"></i>
         </div>
         <div class="hero_content">
-            <h2>Hello,I'm</h2>
-            <h1>Sagar Paul</h1>
-            <h3>An Engineer</h3>
-            <p>A Passionate Developer and a Programmer</p>
-            <div class="hero_btns">
-                <button>Contact Me</button>
-                <button>Hire Me</button>
-            </div>
+             <h2 class="typewriter" data-text="Hello, I'm"></h2>
+            <h1 class="typewriter" data-text="Sagar Paul"></h1>
+            <h3 class="typewriter" data-text="An Engineer"></h3>
+            <p class="typewriter" data-text="A Passionate Developer and a Programmer"></p>
+            <button>Contact Me</button>
+            <button>Hire Me</button>
         </div>
         <div class="hero_image">
-            <img src="image.png" alt="">
+            <img src="image-removebg-preview.png" alt="">
         </div>
     </section>
     <!--About-->
@@ -243,6 +246,29 @@
     <div class="copy_rights">
         <h1>Copy Rights Reserved By <span>Sagar.co</span></h1>
     </div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const lines = document.querySelectorAll(".typewriter");
+
+    lines.forEach((el, index) => {
+      const text = el.getAttribute("data-text");
+      el.textContent = "";
+      let charIndex = 0;
+
+      setTimeout(() => {
+        const typer = setInterval(() => {
+          if (charIndex < text.length) {
+            el.textContent += text.charAt(charIndex);
+            charIndex++;
+          } else {
+            clearInterval(typer);
+          }
+        }, 75);
+      }, index * 1800); // delay between lines
+    });
+  });
+</script>
 
     <script src="script.js"></script>
 </body>

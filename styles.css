@@ -22,9 +22,28 @@
     --body-color:#0F0C27;
 }
 
-body{
-    background-color: var(--body-color);
+/* Style for the video to fill the screen */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
 }
+
+/* Content overlay styling */
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+
 
 
 *{
@@ -124,12 +143,23 @@ ul li:hover a{
     cursor:pointer;
 }
 
-.hero_content{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap:10px;
+.hero_content {
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 200px;
+  transform: translateY(-50%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.typewriter {
+  border-right: 0px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+  animation: none;
+  display: inline-block;
 }
 
 .hero_content h2{
@@ -139,7 +169,7 @@ ul li:hover a{
 }
 
 .hero_content h1{
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 4.5rem;
     color: var(--black-color);
 }
@@ -151,8 +181,9 @@ ul li:hover a{
 }
 
 .hero_content p{
-    font-weight: 300;
-    width: 80%;
+    font-weight: 200;
+    font-size: 1.5rem;
+    width: 100%;
     color: var(--black-color);
 }
 
@@ -181,8 +212,8 @@ button:hover{
 
 .hero_image img{
     width:100%;
+    border-radius: 10px;
 }
-
 
 /* ABOUT SECTION */
 
@@ -533,6 +564,7 @@ button:hover{
     font-weight: 400;
     padding: 10px 0;
     background-color: var(--fix-white);
+    color: var(--input-color);
 }
 
 .copy_rights h1 span{
@@ -646,4 +678,12 @@ button:hover{
     .contact_form{
         width: 100%;
     }
+}
+@media (max-width: 768px) {
+  #bgVideo {
+    display: none;
+  }
+  body {
+    background:none;
+  }
 }
